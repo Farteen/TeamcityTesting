@@ -1,6 +1,3 @@
-[cache]
-  mode = dir
-
 [cxx]
   default_platform = iphonesimulator
   cflags = -g -std=c11

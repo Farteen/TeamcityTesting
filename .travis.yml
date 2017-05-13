@@ -1,6 +1,6 @@
 before_install:
   - type buck >/dev/null 2>&1 || { echo >&2 "not found buck and installing it"; brew tap facebook/fb; brew install buck; }
 osx_image: xcode8.3
-language: swift
+language: objective-c
 script:
   - buck build demo_app_ios #xcodebuild -project TeamcityTesting.xcodeproj -target TeamcityTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
