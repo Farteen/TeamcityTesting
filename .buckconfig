@@ -10,7 +10,7 @@
 
 [alias]
   demo_app_android = //android:demo-app
-  demo_app_ios = //ios:BuckDemoApp
+  demo_app_ios = //:BuckDemoApp
 
 [apple]
   xctool_zip_target = //third-party/ios/xctool:xctool-minimal-zip
