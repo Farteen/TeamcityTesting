@@ -1,9 +1,10 @@
+[cache]
+  mode = dir
+
 [cxx]
-  default_platform = iphonesimulator
-  cflags = -g -std=c11
-  cxxflags = -g -std=c++14
-  # Many ARC APIs don't compile with separate preprocess and compile.
-  combined_preprocess_and_compile = true
+  default_platform = iphonesimulator-x86_64
+  cflags = -g
+  cxxflags = -g
 
 [alias]
   demo_app_android = //android:demo-app
