@@ -8,4 +8,4 @@ before_install:
 
 osx_image: xcode8.3
 language: swift
-script: xcodebuild -project TeamcityTesting.xcodeproj -target TeamcityTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: buck build #xcodebuild -project TeamcityTesting.xcodeproj -target TeamcityTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
