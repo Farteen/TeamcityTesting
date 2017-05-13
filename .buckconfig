@@ -2,7 +2,7 @@
   mode = dir
 
 [cxx]
-  default_platform = iphonesimulator-x86_64
+  default_platform = iphonesimulator
   cflags = -g -std=c11
   cxxflags = -g -std=c++14
   # Many ARC APIs don't compile with separate preprocess and compile.
