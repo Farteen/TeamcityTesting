@@ -19,7 +19,7 @@ apple_bundle(
 
 apple_binary(
   name = 'BuckDemoAppBinary',
-  deps = [':BuckDemoAppResources', '//common:hello'],
+  deps = [':BuckDemoAppResources'],
   preprocessor_flags = ['-fobjc-arc', '-Wno-objc-designated-initializers'],
   headers = glob([
     '*.h',
