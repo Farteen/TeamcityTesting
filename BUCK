@@ -14,7 +14,7 @@ apple_bundle(
   name = 'BuckDemoApp',
   binary = ':BuckDemoAppBinary',
   extension = 'app',
-  info_plist = 'Info.plist',
+  info_plist = 'TeamcityTesting/Info.plist',
 )
 
 apple_binary(
