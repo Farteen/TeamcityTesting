@@ -1,11 +1,7 @@
-env:
-  global:
-    - TRAVIS_BRANCH=travis-build
-
 before_install:
   - brew tap facebook/fb
   - brew install buck
 
 osx_image: xcode8.3
 language: swift
-script: buck build #xcodebuild -project TeamcityTesting.xcodeproj -target TeamcityTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: buck build demo_app_ios #xcodebuild -project TeamcityTesting.xcodeproj -target TeamcityTesting -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
