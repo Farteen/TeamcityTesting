@@ -1,12 +1,6 @@
-# Copyright 2015-present, Facebook, Inc.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-
 apple_resource(
   name = 'BuckDemoAppResources',
-  files = glob(['*.png']),
+  files = glob(['TeamcityTesting/*.png'],['TeamcityTesting/Base.lproj/*.storyboard']),
   dirs = [],
 )
 
@@ -15,6 +9,7 @@ apple_bundle(
   binary = ':BuckDemoAppBinary',
   extension = 'app',
   info_plist = 'TeamcityTesting/Info.plist',
+  tests = [':BuckDemoAppTest'],
 )
 
 apple_binary(
@@ -22,10 +17,10 @@ apple_binary(
   deps = [':BuckDemoAppResources'],
   preprocessor_flags = ['-fobjc-arc', '-Wno-objc-designated-initializers'],
   headers = glob([
-    '*.h',
+    'TeamcityTesting/*.h',
   ]),
   srcs = glob([
-    '*.m',
+    'TeamcityTesting/*.m',
   ]),
   frameworks = [
     '$SDKROOT/System/Library/Frameworks/UIKit.framework',
@@ -36,4 +31,18 @@ apple_binary(
 apple_package(
   name = 'BuckDemoAppPackage',
   bundle = ':BuckDemoApp',
+)
+
+apple_test(
+  name = 'BuckDemoAppTest',
+  test_host_app = ':BuckDemoApp',
+  srcs = glob([
+    'TeamcityTestingTests/*.m',
+  ]),
+  info_plist = 'TeamcityTestingTests/Info.plist',
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+    '$PLATFORM_DIR/Developer/Library/Frameworks/XCTest.framework',
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+  ],
 )
